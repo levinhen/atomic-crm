@@ -32,6 +32,14 @@ export default defineConfig({
       manifest: false, // Use existing manifest.json from public/
     }),
   ],
+  server: {
+    host: true,
+    port: 5173,
+    strictPort: true,
+    hmr: {
+      clientPort: 443,
+    },
+  },
   define:
     process.env.NODE_ENV === "production" && process.env.VITE_SUPABASE_URL
       ? {
