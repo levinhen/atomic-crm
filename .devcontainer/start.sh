@@ -43,7 +43,7 @@ echo "🔑 Anon key 获取成功"
 
 # ── 6. 写入环境变量 ──
 cat > .env.development.local << EOF
-VITE_SUPABASE_URL=${SUPABASE_URL}
+VITE_SUPABASE_URL=${FRONTEND_URL}/supabase-proxy
 VITE_SB_PUBLISHABLE_KEY=${ANON_KEY}
 EOF
 echo "📝 .env.development.local 已生成"
