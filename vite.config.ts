@@ -32,12 +32,19 @@ export default defineConfig({
       manifest: false, // Use existing manifest.json from public/
     }),
   ],
-  server: {
+server: {
     host: true,
     port: 5173,
     strictPort: true,
     hmr: {
       clientPort: 443,
+    },
+    proxy: {
+      '/supabase-proxy': {
+        target: 'http://127.0.0.1:54321',
+        rewrite: (path) => path.replace(/^\/supabase-proxy/, ''),
+        changeOrigin: true,
+      },
     },
   },
   define:
