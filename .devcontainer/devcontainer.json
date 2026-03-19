@@ -6,7 +6,8 @@
       "version": "latest",
       "enableNonRootDocker": "true",
       "moby": "true"
-    }
+    },
+    "ghcr.io/devcontainers-contrib/features/supabase-cli:1": {}
   },
   "customizations": {
     "vscode": {
@@ -35,7 +36,7 @@
       "visibility": "public"
     }
   },
-  "postCreateCommand": "npm install && npm install -g supabase",
+  "postCreateCommand": "npm install",
   "postStartCommand": "bash .devcontainer/start.sh",
   "remoteUser": "node"
 }
