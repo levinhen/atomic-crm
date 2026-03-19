@@ -35,7 +35,7 @@ supabase start 2>&1
 echo "✅ Supabase 启动完成"
 
 # ── 5. 获取 anon key ──
-ANON_KEY=$(npx supabase status --output json 2>/dev/null | \
+ANON_KEY=$(supabase status --output json 2>/dev/null | \
   node -e "let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>console.log(JSON.parse(d).ANON_KEY))")
 
 echo ""
