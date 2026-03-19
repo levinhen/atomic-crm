@@ -30,8 +30,8 @@ echo ""
 
 # ── 4. 启动 Supabase ──
 echo "🗄️  启动 Supabase（首次约 3-5 分钟，拉取镜像请耐心等待）..."
-npx supabase stop 2>/dev/null || true
-npx supabase start 2>&1
+supabase stop 2>/dev/null || true
+supabase start 2>&1
 echo "✅ Supabase 启动完成"
 
 # ── 5. 获取 anon key ──
