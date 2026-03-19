@@ -35,7 +35,7 @@
       "visibility": "public"
     }
   },
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "npm install && npm install -g supabase",
   "postStartCommand": "bash .devcontainer/start.sh",
   "remoteUser": "node"
 }
