@@ -21,17 +21,21 @@
   "portsAttributes": {
     "5173": {
       "label": "Frontend",
-      "onAutoForward": "notify"
+      "onAutoForward": "openBrowserOnce",
+      "visibility": "public"
     },
     "54321": {
       "label": "Supabase API",
-      "onAutoForward": "silent"
+      "onAutoForward": "silent",
+      "visibility": "public"
     },
     "54323": {
       "label": "Supabase Studio",
-      "onAutoForward": "silent"
+      "onAutoForward": "silent",
+      "visibility": "public"
     }
   },
   "postCreateCommand": "npm install",
+  "postStartCommand": "bash .devcontainer/start.sh",
   "remoteUser": "node"
 }
