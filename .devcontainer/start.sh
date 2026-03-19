@@ -48,10 +48,25 @@ VITE_SB_PUBLISHABLE_KEY=${ANON_KEY}
 EOF
 echo "📝 .env.development.local 已生成"
 
-# ── 7. 后台启动前端，日志写入文件 ──
+# ── 7. 后台启动前端，等待就绪 ──
 echo ""
 echo "🌐 启动前端开发服务器..."
 nohup npm run dev > /tmp/vite.log 2>&1 &
+
+echo "⏳ 等待前端就绪..."
+for i in $(seq 1 30); do
+  if grep -q "Local" /tmp/vite.log 2>/dev/null; then
+    break
+  fi
+  sleep 1
+done
+
+if grep -q "Local" /tmp/vite.log 2>/dev/null; then
+  echo "✅ 前端已就绪"
+else
+  echo "⚠️  前端启动超时，查看日志: tail -f /tmp/vite.log"
+  cat /tmp/vite.log
+fi
 
 echo ""
 echo "================================================"
