@@ -1,9 +1,4 @@
 {
-  "env": {
-    "ANTHROPIC_AUTH_TOKEN": "sk-xxxxxxxxxxxxxxxx",
-    "ANTHROPIC_BASE_URL": "https://api.linkapi.ai",
-    "API_TIMEOUT_MS": "600000"
-  },
   "permissions": {
     "defaultMode": "bypassPermissions"
   },
